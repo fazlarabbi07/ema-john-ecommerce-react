@@ -1,0 +1,23 @@
+.product{
+   border:1px solid #B2BEB5;
+    width: 300px;
+    position: relative;
+    border-radius: 5px;
+    
+
+}
+.product img{
+   width: 100%; 
+}
+.product-info{
+    margin-left: 15px;
+}
+.addToCart{
+   background-color: gold;
+   padding: 10px ;
+   width: 100%;
+   border-radius: 5px;
+   font-weight: 700;
+   position: absolute;
+   bottom: 0;
+}
