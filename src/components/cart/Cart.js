@@ -4,7 +4,6 @@ import './Cart.css'
 const Cart = (props) => {
     const {clickedProducts}=props;
     const{price}=clickedProducts;
-    console.log(clickedProducts);
     const productPrice=(one,two)=>one+two.price;
     const total=clickedProducts.reduce(productPrice,0);
     return (
