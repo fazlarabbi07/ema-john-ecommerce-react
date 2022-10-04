@@ -2,11 +2,11 @@ import React from 'react';
 import './Product.css'
 
 const Product = (props) => {
-    const{addToCart,product}=props;
+    // console.log(props)
+    const {product,addToCart}=props;
+    // const{product}=props;
     const{name,seller,price,ratings,img}=product;
-    // console.log(props.addToCart);
-    
-   
+
     return (
         <div className='product'>
             <img src={img} alt=""/>

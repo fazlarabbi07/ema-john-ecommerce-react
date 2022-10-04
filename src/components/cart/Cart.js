@@ -2,17 +2,19 @@ import React from 'react';
 import './Cart.css'
 
 const Cart = (props) => {
-    const {count}=props;
-const totalPrice=(previousPrice,newPrice)=>previousPrice+newPrice.price;
-    console.log(count);
+    const {clickedProducts}=props;
+    const{price}=clickedProducts;
+    console.log(clickedProducts);
+    const productPrice=(one,two)=>one+two.price;
+    const total=clickedProducts.reduce(productPrice,0);
     return (
         <div className='cart'>
             <h1 style={{textAlign:'center'}}>Order Summary</h1>
-            <p>Selceted Items:{count.length}</p>
-            <p>Total Price:{count.reduce(totalPrice,0)} $</p>
-            <p>Total Shipping Charge: $</p>
-            <p>Tax: $</p>
-            <h4>Grand Total: $</h4>
+            <p>Selceted Items:{clickedProducts.length}</p>
+            <p>Total Price: ${total} </p>
+            <p>Total Shipping Charge: {total*.10}$</p>
+            <p>Tax: {total*.001}$</p>
+            <h4>Grand Total: {total+(total*.10)+(total*.001)}$</h4>
         </div>
     );
 };

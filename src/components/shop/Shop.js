@@ -4,16 +4,19 @@ import Product from '../product/Product';
 import './Shop.css';
 const Shop = () => {
     const [products,setProducts]=useState([]);
-    const [count,setCount]=useState([])
+    const [clickedProducts,setClickedproducts]=useState([]);
     useEffect(()=>{
         fetch('products.json')
         .then(res=>res.json())
         .then(data=>setProducts(data))
     },[])
     const addToCart=(product)=>{
-        const newCount=[...count,product];
-        setCount(newCount);
+        
+        const newClickedProducts=[...clickedProducts,product];
+        setClickedproducts(newClickedProducts);
+
     }
+   
     return (
         <div className='container'>
             <div className="product-container">
@@ -22,7 +25,7 @@ const Shop = () => {
                } 
             </div>
             <div className="cart-container">
-               <Cart count={count} ></Cart>
+               <Cart clickedProducts={clickedProducts}></Cart>
             </div>
         </div>
     );
